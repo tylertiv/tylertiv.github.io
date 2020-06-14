@@ -1,0 +1,70 @@
+html, body {
+    background: linear-gradient(to right, rgb(150, 185, 242)0%, rgb(255, 177, 117) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .wrapper {
+    
+    max-width: 50%;
+    display: flex;
+    flex-direction: col;
+    height: 80%;
+  }
+  
+  .left, .right {
+    
+    margin: 5px;
+    max-width: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .bot {
+    margin: 5px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin: 15px
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 66px;
+  }
+
+  li a {
+    display: block;
+    color:black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 15px;
+  }
+
+  li a:hover {
+    background-color: orange;
+    border-radius: 15px;
+  }
+  .left {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-picture {
+    border-radius: 50%;
+  }

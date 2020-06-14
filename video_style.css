@@ -1,0 +1,47 @@
+html, body {
+    background: linear-gradient(to right, rgb(150, 185, 242)0%, rgb(255, 177, 117) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .wrapper {
+    text-align: center;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+  }
+  
+  .content {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .left, .right {
+    
+    margin: 5px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .homebutton {
+    display: block;
+    height: 30px;
+    text-align: center;
+    padding-top: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .homebutton:hover{
+      background-color: orange;
+      border-radius: 15px;
+  }
