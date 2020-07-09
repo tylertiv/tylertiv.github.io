@@ -1,4 +1,4 @@
-let speed = 100;
+let gameover = false;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -113,6 +113,7 @@ function draw() {
     
     // game over conditions
     if(snakeX < 0 || snakeX > 18*box || snakeY < 0*box || snakeY > 18*box || collision(newHead, snake)) {
+        gameover = true;
         ctx.fillStyle = "red";
         ctx.font= "45px Changa One";
         ctx.fillText("GAME OVER :/", 4.75*box, 9.5*box);
@@ -128,6 +129,8 @@ function draw() {
 }
 game = setInterval(draw, 100);
 function changeSpeed(newSpeed){
-    clearInterval(game);
-    game = setInterval(draw, newSpeed);
+    if(!gameover){
+        clearInterval(game);
+        game = setInterval(draw, newSpeed);
+    }
 }
