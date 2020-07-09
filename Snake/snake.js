@@ -10,6 +10,11 @@ ground.src = "img/ground.png";
 // Creating unit
 let box = 32;
 
+// reloads page to restart game ~~ to fix later when clean up code
+function restartGame () {
+    window.location.reload(false); 
+}
+
 // create snake array and initialize body
 let snake = [];
 snake[0] = {x: 9*box, y: 10*box};
@@ -128,6 +133,7 @@ function draw() {
     ctx.fillText(score, 0.8*box, 1.6*box);
 }
 game = setInterval(draw, 100);
+
 function changeSpeed(newSpeed){
     if(!gameover){
         clearInterval(game);

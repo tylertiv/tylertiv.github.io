@@ -46,6 +46,10 @@ html, body {
     box-shadow: 4px 4px 4px darkgray;
   }
 
+  .headers {
+    margin: 0px;
+  }
+
   .social-links:clicked{
     color:black;
   }
