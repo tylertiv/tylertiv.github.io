@@ -1,6 +1,7 @@
-
+let speed = 100;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
 
 // Loading images
 let ground = new Image();
@@ -125,4 +126,8 @@ function draw() {
     ctx.font="45px Changa One";
     ctx.fillText(score, 0.8*box, 1.6*box);
 }
-let game = setInterval(draw, 100);
+game = setInterval(draw, 100);
+function changeSpeed(newSpeed){
+    clearInterval(game);
+    game = setInterval(draw, newSpeed);
+}
