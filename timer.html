@@ -1,0 +1,31 @@
+<html>
+
+    <head>
+        <title>How much longer until I get to see Sydell?</title>
+    </head>
+
+    <body>
+        <p id="timer" style="font-size: 22px; border: 1px black"></p>
+    </body>
+
+    <script>
+        var arrival = new Date("2020-07-13T20:25:00.000-04:00").getTime();
+
+        var x = setInterval(function() {
+
+            var now = new Date().getTime();
+            var distance = arrival - now;
+
+            var hours = Math.floor(distance / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = hours + " hours, " + minutes + " minutes, " + seconds + " seconds!";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "Here!"
+            }
+        }, 1000);
+    </script>
+
+</html> 
