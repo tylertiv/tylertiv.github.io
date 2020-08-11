@@ -1,0 +1,56 @@
+</!DOCTYPE html>
+</html>
+	<head>
+		<title>MelvorIdle XP Calculator</title>
+	</head>
+
+	<body>
+		<h1>MelvorIdle XP Calculator</h1>
+		<h3>Current XP</h3>
+		<input type="number" id="xpInput">
+		<h3>Current Inventory</h3>
+		<input type="number" id="invInput">
+		<p>Input your current XP in the field above and click the button to calculate</p>
+		<output id="result">XP needed: </output>
+		<ul>
+			<li id="actions"></li>
+			<li id="materials">
+				<div id="bars"></div>
+				<ul>
+					<li id="ore"></li>
+					<li id="coal"></li>
+					<li id="smeltTime"></li>
+				</ul>
+			</li>
+			<li id="hours"></li>
+		</ul>
+		<button onclick="calculate()">Calculate!</button>
+
+
+		<script>
+			function calculate() {
+				let currentXP = document.getElementById("xpInput").value;
+				let currentInv = document.getElementById("invInput").value;
+				const xpfor99 = 13034431;
+
+				let xpneeded = xpfor99 - currentXP;
+				document.getElementById("result").innerHTML = "XP needed: " + xpneeded.toLocaleString();
+
+
+				let actionsNeeded = xpneeded / 375;
+				document.getElementById("actions").innerHTML = "Actions needed: " + Math.ceil(actionsNeeded).toLocaleString();
+
+				let materialsNeeded = actionsNeeded * 5 - currentInv;
+				document.getElementById("bars").innerHTML = "Bars needed: " + Math.ceil(materialsNeeded).toLocaleString();
+
+				
+				document.getElementById("ore").innerHTML = "Ore needed: " + Math.ceil(materialsNeeded).toLocaleString();
+				document.getElementById("coal").innerHTML = "Coal needed: " + Math.ceil(materialsNeeded * 4).toLocaleString();
+				document.getElementById("smeltTime").innerHTML = "Smelting time: " + (materialsNeeded * 2 / 3600).toFixed(2);
+
+				let secondsNeeded = actionsNeeded * 2;
+				document.getElementById("hours").innerHTML = "Hours needed: " + (secondsNeeded / 3600).toLocaleString();
+			}
+		</script>
+	</body>
+</html>
